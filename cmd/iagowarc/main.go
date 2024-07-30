@@ -23,7 +23,7 @@ func init() {
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "cmd",
+	Use:   "iagowarc",
 	Short: "Utility to process WARC files",
 	Long:  `Utility to process WARC files`,
 }
