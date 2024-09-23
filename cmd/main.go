@@ -10,6 +10,7 @@ import (
 func init() {
 	rootCmd.AddCommand(extractCmd)
 	rootCmd.AddCommand(verifyCmd)
+	rootCmd.AddCommand(lsCmd)
 
 	extractCmd.Flags().IntP("threads", "t", 1, "Number of threads to use for extraction")
 	extractCmd.Flags().StringP("output", "o", "output", "Output directory for extracted files")
@@ -43,6 +44,14 @@ var verifyCmd = &cobra.Command{
 	Long:  `Verify the validity of xtracts the URLs from one or many WARC file(s)`,
 	Args:  cobra.MinimumNArgs(1),
 	Run:   verify,
+}
+
+var lsCmd = &cobra.Command{
+	Use:   "ls",
+	Short: "List the URLs from one or many WARC file(s)",
+	Long:  `List the URLs from one or many WARC file(s)`,
+	Args:  cobra.MinimumNArgs(1),
+	Run:   ls,
 }
 
 func main() {
